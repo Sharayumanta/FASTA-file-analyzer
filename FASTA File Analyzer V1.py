@@ -18,6 +18,11 @@ def gc_content(sequence):
     gc = sequence.count("G") + sequence.count("C")
     return (gc / len(sequence)) * 100
 
+def at_content(sequence):
+    """Calculate AT content percentage."""
+    at = sequence.count("A") + sequence.count("T")
+    return (at / len(sequence)) * 100
+
 
 def analyze_sequence(name, sequence):
     """Display statistics for a DNA sequence."""
@@ -34,6 +39,7 @@ def analyze_sequence(name, sequence):
     print()
 
     print(f"GC Content    : {gc_content(sequence):.2f}%")
+    print(f"AT Content    : {at_content(sequence):.2f}%")
     print("=" * 40)
     print()
 

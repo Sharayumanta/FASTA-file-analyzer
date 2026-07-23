@@ -98,6 +98,7 @@ def main():
         print("Summary")
         print(f"Longest Sequence : {longest_name}")
         print(f"Length           : {longest_length} bases")
+        print("Status        : Valid DNA Sequence")
         print("=" * 40)
 
     except FileNotFoundError:

@@ -84,18 +84,22 @@ def main():
 
         longest_name = ""
         longest_length = 0
-        for name, sequence in sequences:
+        valid_count = 0
+        for i, (name, sequence) in enumerate(sequences, start=1):
 
             if not is_valid_sequence(sequence):
                 print(f"Invalid sequence detected in '{name}'.")
                 continue
+            print(f"Sequence #{i}")
 
             analyze_sequence(name, sequence)
+            valid_count += 1
             if len(sequence) > longest_length:
                 longest_length = len(sequence)
                 longest_name = name
         print("=" * 40)
         print("Summary")
+        print(f"Valid Sequences : {valid_count}")
         print(f"Longest Sequence : {longest_name}")
         print(f"Length           : {longest_length} bases")
         print("Status        : Valid DNA Sequence")
